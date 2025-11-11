@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-md w-full max-w-md animate-fade-in">
+    <div class="transition duration-300 ease-in-out transform hover:scale-105">
+        <h2 class="text-xl font-bold text-indigo-600 mb-4 text-center">✏️ Edit Task</h2>
+        </div>
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Title:</label>
+                {{ form.title }}
+            </div>
+            <div class="flex items-center">
+                {{ form.completed }}
+                <label class="ml-2 text-sm text-gray-700">Completed</label>
+            </div>
+            <button type="submit" class="w-full bg-indigo-500 text-white py-2 rounded hover:bg-indigo-600 transition duration-300">
+                Update Task
+            </button>
+        </form>
+        <div class="mt-4 text-center">
+            <a href="/" class="text-sm text-gray-500 hover:text-indigo-500 transition">← Back to List</a>
+        </div>
+    </div>
+</body>
+</html>
